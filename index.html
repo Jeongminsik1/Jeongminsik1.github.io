@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* 기본 스타일 */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -16,12 +15,23 @@
       line-height: 1.6;
     }
 
+    /* 헤더: 정보보호 컨설턴트 느낌 */
     header {
-      background: linear-gradient(135deg, #4a90e2, #007aff);
+      background: linear-gradient(135deg, #1a1a1a, #0f4c81);
       color: white;
       padding: 3rem 1rem 2rem;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "🔒";
+      position: absolute;
+      font-size: 5rem;
+      top: 20px;
+      left: 20px;
+      opacity: 0.15;
     }
     header h1 {
       margin: 0;
@@ -46,7 +56,6 @@
       font-size: 1.8rem;
     }
 
-    /* 프로젝트 카드 */
     .projects {
       display: flex;
       flex-wrap: wrap;
@@ -109,7 +118,6 @@
       background: #005fcc;
     }
 
-    /* Career & Education */
     ul {
       padding-left: 1.2rem;
     }
@@ -132,7 +140,6 @@
       color: #666;
     }
 
-    /* 반응형 */
     @media (max-width: 900px) {
       .project-card { flex: 1 1 calc(50% - 1rem); }
     }
@@ -199,9 +206,8 @@
   <section class="contact">
     <h2>📬 Contact</h2>
     <p>
-      <a href="mailto:yourmail@example.com">이메일</a>
+      <a href="mailto:qhdbgksxhdb@naver.com">이메일</a>
       <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
     </p>
   </section>
 
