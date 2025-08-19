@@ -4,63 +4,142 @@
   <meta charset="UTF-8">
   <title>민식 정 포트폴리오</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* 기본 스타일 */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9fafc;
+      background: linear-gradient(135deg, #e0f7fa, #f9f9f9);
       color: #333;
       line-height: 1.6;
     }
+
     header {
       background: linear-gradient(135deg, #4a90e2, #007aff);
       color: white;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem 2rem;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
     header p {
       margin: 0.5rem 0 0;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
+
     section {
-      max-width: 900px;
-      margin: 2rem auto;
+      max-width: 1000px;
+      margin: 3rem auto;
       padding: 0 1rem;
     }
+
     h2 {
-      border-bottom: 2px solid #007aff;
+      border-bottom: 3px solid #007aff;
       padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: #007aff;
+      font-size: 1.8rem;
     }
-    .project {
+
+    /* 프로젝트 카드 */
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .project-card {
       background: white;
-      margin-bottom: 1rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+      flex: 1 1 calc(33% - 1rem);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .project-card .content {
       padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
-    .project h3 {
-      margin-top: 0;
-      color: #333;
+
+    .project-card h3 {
+      margin: 0 0 0.5rem;
+      color: #007aff;
+      font-size: 1.3rem;
     }
+
+    .project-card p {
+      margin: 0 0 1rem;
+      flex-grow: 1;
+    }
+
+    .project-card a {
+      padding: 0.5rem 1rem;
+      background: #007aff;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .project-card a:hover {
+      background: #005fcc;
+    }
+
+    /* Career & Education */
+    ul {
+      padding-left: 1.2rem;
+    }
+
     .contact a {
       color: #007aff;
       text-decoration: none;
-      margin-right: 1rem;
+      margin-right: 1.2rem;
+      font-weight: bold;
+      transition: color 0.3s;
     }
+    .contact a:hover { color: #005fcc; }
+
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       background: #f1f1f1;
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #666;
+    }
+
+    /* 반응형 */
+    @media (max-width: 900px) {
+      .project-card { flex: 1 1 calc(50% - 1rem); }
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1.1rem; }
+      .project-card { flex: 1 1 100%; }
     }
   </style>
 </head>
@@ -78,17 +157,33 @@
 
   <section>
     <h2>🚀 Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200.png?text=Project+A" alt="프로젝트 A 이미지">
+        <div class="content">
+          <h3>📌 프로젝트 A</h3>
+          <p>프로젝트 목표와 결과를 요약합니다. 사용 기술, 배운 점 등 간략히 기록.</p>
+          <a href="https://github.com/jeongminsik1/projectA" target="_blank">자세히 보기</a>
+        </div>
+      </div>
 
-    <div class="project">
-      <h3>📌 프로젝트 A</h3>
-      <p>간단한 설명: 프로젝트의 목표와 결과를 요약합니다.</p>
-      <p><a href="https://github.com/jeongminsik1/projectA" target="_blank">자세히 보기</a></p>
-    </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200.png?text=Project+B" alt="프로젝트 B 이미지">
+        <div class="content">
+          <h3>📌 프로젝트 B</h3>
+          <p>사용 기술과 프로젝트 결과를 정리하고, 배운 점을 공유합니다.</p>
+          <a href="https://github.com/jeongminsik1/projectB" target="_blank">자세히 보기</a>
+        </div>
+      </div>
 
-    <div class="project">
-      <h3>📌 프로젝트 B</h3>
-      <p>간단한 설명: 어떤 기술을 썼고, 무엇을 배웠는지 정리합니다.</p>
-      <p><a href="https://github.com/jeongminsik1/projectB" target="_blank">자세히 보기</a></p>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200.png?text=Project+C" alt="프로젝트 C 이미지">
+        <div class="content">
+          <h3>📌 프로젝트 C</h3>
+          <p>새로운 프로젝트 추가 예시: 목표와 결과, 기술 스택 등 기록.</p>
+          <a href="https://github.com/jeongminsik1/projectC" target="_blank">자세히 보기</a>
+        </div>
+      </div>
     </div>
   </section>
 
